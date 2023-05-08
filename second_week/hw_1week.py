@@ -133,8 +133,14 @@ class StudentManagerImpl(StduentManagerRepo):
                 return False
 
 # Student 인스턴스 생성 함수
-def student_generator(info: list):
-    student = Student(info[0], info[1], info[2], info[3], info[4])
+def student_generator():
+    informations = []
+    informations.append(input("학번: "))
+    informations.append(input("이름: "))
+    informations.append(input("나이: "))
+    informations.append(input("전공: "))
+    informations.append(input("학점: "))
+    student = Student(informations[0], informations[1], informations[2], informations[3], informations[4])
     return student
 
 def main(manager: StudentManagerService):
@@ -152,13 +158,7 @@ def main(manager: StudentManagerService):
             print("정수를 입력해 주세요.")
             continue
         if select == 1:
-            informations = []
-            informations.append(input("학번: "))
-            informations.append(input("이름: "))
-            informations.append(input("나이: "))
-            informations.append(input("전공: "))
-            informations.append(input("학점: "))
-            student = student_generator(informations)
+            student = student_generator()
             manager.add_student(student)
             # 학생 신규 추가 후 학점 기준 정렬 실행
             manager.sort_student()
@@ -172,13 +172,7 @@ def main(manager: StudentManagerService):
         elif select == 5:
             name = input("수정할 학생의 이름: ")
             if manager.is_student_exsist(name) == True:
-                informations = []
-                informations.append(input("학번: "))
-                informations.append(input("이름: "))
-                informations.append(input("나이: "))
-                informations.append(input("전공: "))
-                informations.append(input("학점: "))
-                student = student_generator(informations)
+                student = student_generator()
                 manager.update_student(name,student)
         elif select == 6:
             print("시스템 종료")
