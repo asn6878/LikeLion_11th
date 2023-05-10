@@ -42,11 +42,8 @@ def main(manager: StudentManagerService):
                 print(name+" 학생의 삭제가 완료 되었습니다.")
         elif select == 5:
             name = input("수정할 학생의 이름: ")
-            if manager.is_student_exsist(name):
-                student = student_generator()
-                manager.update_student(name,student)
-            else:
-                print(name+ "학생이 시스템에 존재하지 않습니다.")
+            student = student_generator()
+            manager.update_student(name,student)
         elif select == 6:
             print("시스템 종료")
             break

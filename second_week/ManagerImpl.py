@@ -42,10 +42,13 @@ class StudentManagerImpl(StduentManagerRepo):
             print("시스템에 학생이 존재하지 않습니다!!!")
 
     def update_student(self, name, student):
-        for i in self.__std_list:
-            if i.get_name() == name:
-                self.__std_list[self.__std_list.index(i)] = student
-        print(name+ " 학생의 정보를 변경하였습니다.")
+        if self.is_student_exsist(name):
+            for i in self.__std_list:
+                if i.get_name() == name:
+                    self.__std_list[self.__std_list.index(i)] = student
+            print(name+ " 학생의 정보를 변경하였습니다.")
+        else :
+            print(name+ "학생이 시스템에 존재하지 않습니다.")
 
 
     def sort_student(self):
