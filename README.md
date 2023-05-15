@@ -14,7 +14,7 @@
 4. 학생이 추가될 때마다 정렬을 수행하므로 한번에 여러 학생이 추가되면 비효율적일 것 같습니다. 전체 학생을 출력할 때만 정렬하면 좋지않을까 생각했습니다
 
 5. Impl에서 delete_student(), update_student()를 보면,..
-```
+```Python
 for i in self.__std_list:
                 if i.get_name() == name:
                     self.__std_list[self.__std_list.index(i)] = student
@@ -26,7 +26,7 @@ for i in self.__std_list:
 
 6.is_student_exist()가 제대로 동작하지 않을 것 같습니다.
 학생 존재 여부를 확인하는 동작은 StudentManagerImpl에 구현되어 있습니다. 여기서 True 혹은 False를 리턴합니다. 이 메소드를 StudentManagerService에서 student_repo를 통해 호출하고, True혹은 False값을 전달받습니다. 그런데 StudentManagerService에서는 전달받은 이 값들을 리턴하지 않습니다. 따라서 Service의 메소드를 호출하는 메인에서는 True/False값을 전달받지 못할 것 같습니다. 
-```
+```Python
     def is_student_exsist(self, name):
         return self.__student_repo.is_student_exisist(name) 
 ```
