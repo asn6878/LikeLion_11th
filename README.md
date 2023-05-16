@@ -1,9 +1,15 @@
 # LikeLion_11th
+## 3 주차 과제는 django_project_1/post 경로의 models.py 에 있습니다.
+* * *
+![capture](https://github.com/asn6878/LikeLion_11th/assets/79460319/22e174da-b564-43e5-900d-ea9efd6dc88c)
+이번 과제는 개인 블로그를 모델링 하는 과제로
+Blogs, Categorys, Comments, Posts, Tags, Todays 총 6개의 테이블을 모델링 해 보았습니다.
 
+* * *
 ## 2 주차 과제는 second_week 파일내에 있으며, 코드리뷰 내용 수정 완료되었습니다.
 
 * * *
-## 코드리뷰 내용 (리뷰어 : 염동환)
+## 2주차 과제 코드리뷰 내용 (리뷰어 : 염동환)
 
 1. 클래스별로 파일을 구분해서 관리하는 것도 좋을 것 같습니다.
 
