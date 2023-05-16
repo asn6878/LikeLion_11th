@@ -18,7 +18,7 @@ class Today(models.Model): # 블로그의 방문자 수를 나타내는 클래�
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
 
     def __str__(self):
-        return str(self.today_total)
+        return "금일 방문자" + str(self.today_total)
 
 class Category(models.Model): # 게시물을 분류할 수 있는 카테고리
     name = models.CharField(max_length=30)
