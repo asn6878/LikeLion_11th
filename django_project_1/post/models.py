@@ -33,6 +33,8 @@ class Post(models.Model):
     body = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    like = models.IntegerField(default=0)
+    dislike = models.IntegerField(default=0)
 
     def __str__(self):
         return self.title
@@ -42,8 +44,8 @@ class Comment(models.Model):
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     comment = models.TextField()
     date = models.DateTimeField(auto_now_add=True) # 날짜
-    likes = models.IntegerField() # 좋아요
-    dislikes = models.IntegerField() # 싫어요
+    likes = models.IntegerField(default=0) # 좋아요
+    dislikes = models.IntegerField(default=0) # 싫어요
 
     def __str__(self):
         return self.comment
