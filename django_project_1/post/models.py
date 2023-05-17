@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
 import datetime
 
 class Blog(models.Model):
@@ -23,7 +22,7 @@ class Today(models.Model): # 블로그의 방문자 수를 나타내는 클래�
 class Category(models.Model): # 게시물을 분류할 수 있는 카테고리
     name = models.CharField(max_length=30)
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE, null=True)
-    
+
     def __str__(self):
         return self.name
     
@@ -35,6 +34,8 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     like = models.IntegerField(default=0)
     dislike = models.IntegerField(default=0)
+    content_img = models.ImageField(null=True)
+    content_file = models.FileField(null=True)
 
     def __str__(self):
         return self.title
