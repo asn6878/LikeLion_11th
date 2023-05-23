@@ -30,8 +30,8 @@ class Post(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     body = models.TextField()
-    date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    date = models.DateTimeField(auto_now_add=True)
     like = models.IntegerField(default=0)
     dislike = models.IntegerField(default=0)
     content_img = models.ImageField(null=True)
@@ -57,4 +57,3 @@ class Tag(models.Model): # 게시글에 달리는 태그(해시태그)
 
     def __str__(self):
         return self.tag
-

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create</title>
+    <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #FF7710;
+    }
+    
+    .form-container {
+      width: 400px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #1C1B1A;
+      color: white;
+    }
+    
+    .form-container label, .form-container input, .form-container textarea, .form-container input[type="submit"] {
+      display: block;
+      margin-bottom: 10px;
+      border-radius: 20px;
+    }
+    select {
+      width:100px; height: 30px;
+      border-radius : 20px;
+    }
+    button {
+        width: 120px;
+        height: 50px;
+        border-radius: 15px;
+        font-weight: bolder;
+        font-size: 15px;
+        background-color: #FF7710;
+        color: #1C1B1A;
+        border-width : 5px;
+        border-color : white;
+    }
+    </style>
+</head>
+<!-- <body>
+    <form action="" method="POST"> {% csrf_token %}
+        <h2>게시글 제목</h2>
+        <textarea name="textarea"></textarea>
+        <h2></h2>
+        <input type="submit" value="POST 제출">
+    </form>
+
+</body> -->
+{% block content %}
+<body>
+    <div class="form-container">
+        <h1>Create</h1>
+        <form method="POST"> {% csrf_token %}
+        <!-- <label for="title">제목:</label>
+        <input type="text" id="title" name="title" class="round_box"><br><br>
+        
+        <label for="content">내용:</label><br>
+        <textarea id="content" name="content" rows="5" cols="40" class="round_box"></textarea><br><br>
+        
+        <input type="submit" value="글 작성" id="button"> -->
+        {{ form.as_table }}
+        <button type="submit">글 작성하기</button>
+        </form>
+{% endblock %}
+    </div>
+  </body>
+</html>

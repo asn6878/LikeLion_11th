@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          background-color: #F5F5F5;
+        }
+    
+        .container {
+          max-width: 800px;
+          margin: 0 auto;
+          padding: 20px;
+          background-color: #FFFFFF;
+          border-radius: 10px;
+          box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+    
+        .post {
+          margin-bottom: 20px;
+          padding: 10px;
+          background-color: #EFEFEF;
+          border-radius: 5px;
+        }
+    
+        .post-title {
+          font-size: 30px;
+          color: #333333;
+          text-align: center;
+          margin-bottom: 60px;
+        }
+        
+        .post-author {
+            float: right;
+
+        }
+        .post-content {
+          margin-top: 10px;
+          color: #666666;
+        }
+        button {
+            height:50px;
+            width:100px;
+            background-color:#FF7710;
+            color: black;
+            font-size : 20px;
+            border-radius : 20px;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+      <div class="post">
+        <h1 class="post-title">{{ post.title }}</h1><hr>
+        <h4>작성자 : {{ post.author.username }}</h4>
+        <p class="post-content">
+          {{ post.body }}
+        </p><hr>
+      </div>
+      <button type="button" onclick="location.href='/post'">목록</button>
+    </div>
+  </body>
+</html>
