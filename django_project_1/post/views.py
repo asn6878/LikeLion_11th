@@ -58,3 +58,8 @@ def post_update(request, pk):
         print(post.body)
         print(post.date)
         return render(request, 'update.html', context)
+    
+# Post Delete의 역할
+def post_delete(request, pk):
+    Post.objects.filter(id=pk).delete()
+    return HttpResponseRedirect(reverse('post:index'))

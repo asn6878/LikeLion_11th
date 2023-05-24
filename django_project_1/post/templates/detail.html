@@ -51,6 +51,9 @@
             font-size : 20px;
             border-radius : 20px;
         }
+        #delete_btn{
+          float: right;
+        }
       </style>
 </head>
 <body>
@@ -63,6 +66,8 @@
         </p><hr>
       </div>
       <button type="button" onclick="location.href='/post'">목록</button>
+      <button type="button" id="delete_btn" onclick="location.href='/post/delete/{{ post.id }}'">글 삭제</button>
+      <button type="button" id="delete_btn" onclick="location.href='/post/update/{{ post.id }}'">글 수정</button>
     </div>
   </body>
 </html>
