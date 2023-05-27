@@ -9,7 +9,7 @@
 </head>
 <body>
     {% for object in object_list %}
-        <a href="{{ object.id }}"><h2>{{ object }}</h2></a>
+        <a href="{{ object.id }}"><h2>{{ object.title }}</h2></a>
         <!--<p>{{ object.body }}</p>-->
         <h4>{{ object.date }}</h4>
         <hr>

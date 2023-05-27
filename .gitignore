@@ -4,3 +4,4 @@ test/
 __pycache__/
 LikeLion-11th-venv/
 password.py
+drf_venv/

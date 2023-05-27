@@ -57,11 +57,11 @@
 <body>
     <div class="form-container">
         <h1>Update</h1>
-        <form method="POST"> {% csrf_token %}
+        <form method="POST" id="tmp"> {% csrf_token %}
         <label for="title">제목</label>
         <input type="text" id="title" name="title" class="round_box" value="{{ post.title }}"><br>
         <label for="content">내용</label><br>
-        <textarea id="content" name="body" rows="5" cols="40" class="round_box" value="{{ post.body }}"></textarea><br><br>
+        <textarea id="content" form="tmp" name="body" rows="5" cols="40" class="round_box" value="{{ post.body }}"></textarea><br><br>
         <button type="submit">글 수정하기</button>
         </form>
 {% endblock %}
