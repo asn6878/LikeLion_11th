@@ -55,7 +55,7 @@ def post_update(request, pk):
             return HttpResponseRedirect(reverse('post:detail', args=(post.id,)))
     else:
         form = PostCreateForm(instance=post)
-    return render(request, 'create.html',{'form':form})
+    return render(request, 'update.html',{'form':form})
     
 # Post Delete의 역할
 def post_delete(request, pk):
