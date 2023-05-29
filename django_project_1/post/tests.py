@@ -43,10 +43,23 @@ class PostViewTest(TestCase):
         # 유효한 category_id 값을 가지는 Category 인스턴스 생성
     def test_post_list_view(self):
         self.client.login(username='testuser', password='testpassword')
-        response = self.client.get(reverse('index'))
-        self.assertEqual(response, 200)
+        response = self.client.get(reverse('post:index'))
+        # assertEqual로 HttpResponse의 상태코드가 200인지ㅍ확인한다.
+        self.assertEqual(response.status_code, 200)
     
     def test_post_create_view(self):
         self.client.login(username='testuser', password='testpassword')
-        response = self.client.get(reverse('post_create'))
+        response = self.client.get(reverse('post:create'))
+        self.assertEqual(response.status_code, 200)
+
+    def test_post_read_view(self):
+        self.client.login(username='testuser', password='testpassword')
+        post = Post.objects.all()
+        response = self.client.get(reverse('post:detail', args=(post[0].id,)))
+        self.assertEqual(response.status_code, 200)
         
+    def test_post_delete_view(self):
+        self.client.login(username='testuser', password='testpassword')
+        post = Post.objects.all()
+        response = self.client.get(reverse('post:delete', args=(post[0].id,)))
+        self.assertEqual(response.status_code, 200)
